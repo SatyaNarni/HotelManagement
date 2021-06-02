@@ -11,7 +11,7 @@ import java.util.Optional;
 import com.myproject.bean.Menu;
 import com.myproject.dbutil.DBUtil;
 
-public class MenuManagement implements MenuManagementInterface {
+public class MenuManagementDAO implements MenuManagementInterface {
 
 	public List<Menu> viewMenu() throws ClassNotFoundException, SQLException {
 		List<Menu> menuList = null;
