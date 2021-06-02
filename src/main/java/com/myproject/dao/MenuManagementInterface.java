@@ -7,7 +7,7 @@ import com.myproject.bean.Menu;
 public interface MenuManagementInterface {
 	List<Menu> viewMenu() throws Exception;
 
-	boolean deleteMenuItem(String menuId);
+	boolean deleteMenuItem(String menuId) throws Exception;
 
-	boolean addMenuItem(Menu menu);
+	boolean addMenuItem(Menu menu) throws Exception;
 }
