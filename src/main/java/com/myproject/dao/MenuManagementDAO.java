@@ -53,10 +53,9 @@ public class MenuManagementDAO implements MenuManagementInterface {
 		
 		boolean result = false;
 		Connection con = DBUtil.getConnection();
-		Optional<Menu> isNull = Optional.ofNullable(menu);
 		PreparedStatement pst = con.prepareStatement("insert into MENU values(?,?,?,?,?,?)");
 		
-		if(isNull.isPresent()){
+		if(menu != null){
 			pst.setString(1, menu.getMenuId());
 			pst.setString(2, menu.getMenuName());
 			pst.setString(3, menu.getCategory());
@@ -64,9 +63,8 @@ public class MenuManagementDAO implements MenuManagementInterface {
 			pst.setDouble(5, menu.getCost());
 			pst.setString(6, menu.getStatus());	
 			
-			result = pst.executeUpdate() > 1 ? true : false;
+			result = pst.executeUpdate() > 0 ? true : false;
 		}
-		
 		DBUtil.closeConnection(con);
 		
 		return result;

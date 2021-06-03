@@ -23,12 +23,15 @@ public class MenuViewController extends HttpServlet {
 		MenuService menuService = new MenuService();	
 		try {
 			List<Menu> menuList = menuService.viewMenu();
-			request.setAttribute("mList", menuList);
+			request.setAttribute("menuList", menuList);
+			for(Menu m: menuList){
+				System.out.println("In viewww" + m);
+			}
 			RequestDispatcher rd = request.getRequestDispatcher("/JSP/viewMenu.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {
 			RequestDispatcher rd = request.getRequestDispatcher("/JSP/failure.jsp");
-			request.setAttribute("errorMessage", e.getMessage());
+			request.setAttribute("Message", "OOPS..! + Something Went Wrong " +"/n"+ e.getMessage());
 			rd.forward(request, response);
 		} 
 		

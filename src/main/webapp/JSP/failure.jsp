@@ -8,14 +8,26 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/hotelMgmt.css">
 </head>
 <body>
-<h1 align="center">Hotel Management System</h1>
+<div class="header">		
+		<img src="<%=request.getContextPath()%>/Images/logo.png"  alt="hotellogo"/>
+		<h1>Online Hotel Management System</h1>
+	</div>
+<h1 align="center">Acknowledgement</h1>
 <br><br>
 <p align="center">
-<font color="red"><%=request.getAttribute("errorMessage") %></font>
+<font color="red"><%=request.getAttribute("Message") %></font>
 </p>
 <br><br>
 <center>
 <a class="button" href="<%=request.getContextPath()%>/JSP/menuHome.jsp">Home</a>
 </center>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<div class="footer">
+		<h4>Copyright &copy; 2021 Hotel Management</h4>
+	</div>
 </body>
 </html>
