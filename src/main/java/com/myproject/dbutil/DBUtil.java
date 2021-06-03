@@ -6,12 +6,12 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 public class DBUtil {
+	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
-
-		Class.forName("oracle.jdbc.driverOracleDriver");
-		Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "sastra");
-
-		return connection;
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		System.out.println("baboiiii");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "sastra");
+		return con;
 	}
 
 	public static void closeConnection(Connection con) throws SQLException {

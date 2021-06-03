@@ -18,9 +18,8 @@ public class MenuManagementDAO implements MenuManagementInterface {
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pst = con.prepareStatement("select * from MENU");
 		ResultSet rs= pst.executeQuery();
-		Optional<List<Menu>> optionalList = Optional.of(menuList);
 		while(rs.next()){
-			if(!optionalList.isPresent()){
+			if(menuList == null){
 				menuList = new ArrayList<>();
 			}
 			Menu menu = new Menu(rs.getString(1),
