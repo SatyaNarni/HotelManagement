@@ -1,0 +1,10 @@
+How to add OJDBC jar to Maven Repository:
+	due to the Oracle binary licensing restrictions, the ojdbc driver jar is not available on Maven public repository 
+	--> Make sure Apache Maven is installed on your Machine else follow https://www.youtube.com/watch?v=RfCWg5ay5B0 for setup
+	--> Download ojdbc14.jar from Internet (path ref Downloads/ojdbc14.jar)
+	--> run the command 
+		mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=Downloads/ojdbc14.jar
+	-->  Add dependency in POM.xml
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.3.0</version>
